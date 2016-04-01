@@ -2,31 +2,30 @@
 (function() {
 	
 	//Variables
-	images = new Array ("Beetlejuice.jpg", "index.jpg", "LastExorcism.jpg", "Frankenweenie4pk.jpg", "Halloween2.jpg");
+	images = new Array ("Beetlejuice.jpg", "CloudyWithAChanceOfMeatballs.jpg", "LastExorcism.jpg", "Frankenweenie4pk.jpg", "Halloween2.jpg");
 	i = 0;
 
 	next = document.querySelector("#next");
 	previous = document.querySelector("#prev");
-	console.log ("Variables");
-	console.log (next);
-	console.log (previous);
+	x = document.querySelector("#movie");
 
 	//Functions
 	function nextImg() {
-		console.log ("inside");
 		i++
 		if (i==images.length) {
 			i=0 	
 		}
+		var imgSrc = "images/"+ images[i];
+		x.src=imgSrc;
 	}
 	
 	function prev() {
-		console.log ("outside");
 		if(i == 0) {
 			i = 5;	
 		}	
 		i--;
-		x = document.querySelector("#bigImg");
+		var imgSrc = "images/"+ images[i];
+		x.src=imgSrc;
 	}
 	
 	//Event Listeners
